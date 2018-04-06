@@ -61,3 +61,22 @@ START-OF-SELECTION.
 	data : lv_vbeln like vbak-vbeln. "vbeln: column of table 'vbak'
 }
 }
+Section 2: Abap Dictionary {
+	00.Definition: {
+		- ABAP Dictionary is a central repository where we DEFINE and MAINTAIN the objects
+		which are related to database.
+		- ABAP Dictionary provides the following object TYPEs: {
+			+ Database table - Creates table definitions in ABAP Dict, 
+							independent of any database.
+			+ View - Create view definitions in ABAP Dictionary. A view is a 
+							virtual table that does not store the data physically.
+			+ Data type - Creates a definition of a user-defined type in ABAP Dic.
+			+ Type group - Create groups of data types in ABAP Dic.
+			+ Domain - Create domains in ABAP Dic. A domain is used to describe 
+						the technical attributes of a field, such as a range of values.
+			+ Search help - Creates a help document (F4 Help) or called input help for fields.
+			+ Lock object - Creates a local or lock object that helps synchronize 
+						the access of multiple users simultaneously.
+		}
+	}
+}
