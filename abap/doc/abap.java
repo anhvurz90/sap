@@ -1,3 +1,4 @@
+Section 1: Starting as Abap Developer {
 01.Tcode: {
 	Se80: Abab Workbench
 	Se38: Abap Programs
@@ -42,4 +43,21 @@ START-OF-SELECTION.
 	write: / text hotspot.
 }
 04.Data Types: {
+	
+	data : lv_x type x. "Any byte values (00 to FF)
+	data : lv_n(5) type n. "1 to 65535
+	data : lv_c(5) type c. "1 to 65535
+	data : lv_d type d. "8 char - date
+	data : lv_t type t. "6 char - time
+	data : lv_i type i. "Java Integer
+	data : lv_f type f . "Float: 2.E-308 to 1.E+308 positive or negative
+	
+	data : lv_p(16) type p DECIMALS 3. "8 bytes
+	data : lv_s type string. "Any alphanumeric characters
+	data : lv_xs type xstring. "Any byte values (00 to FF)
+	
+	data : ls_vbak type vbak. "vbak: table
+	data : ls_vbak2 like vbak.
+	data : lv_vbeln like vbak-vbeln. "vbeln: column of table 'vbak'
+}
 }
