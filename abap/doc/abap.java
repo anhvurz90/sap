@@ -97,6 +97,18 @@ Section 3: Handling Data: {
 			write : / ZFI_T_PAYMENT-belnr, ZFI_T_PAYMENT-dmbtr,
 					ZFI_T_PAYMENT-waers.
 		endSelect.
-		
+	}
+	3.2.Internal Tables & Work Areas: {
+		- Internal Table: {
+			+ An Internal Table is a temporary table that contains the records
+			of an ABAP program while it is being executed.
+			+ An Internal Table exists only during the runtime of an SAP program
+			+ An IT is declared in an ABAP program when you need to retrieve data 
+			from database tables.
+			+ IT is stored in rows and columns.
+			+ The individual records of an IT are accessed with an index or a key.
+			+ The records of the IT are discarded when the execution of the program
+			is terminated.
+		}
 	}
 }
