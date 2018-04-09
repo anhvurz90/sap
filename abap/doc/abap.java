@@ -111,4 +111,19 @@ Section 3: Handling Data: {
 			is terminated.
 		}
 	}
+	3.3.Working with Internal Tables & Loop: {
+		data : it_payment like TABLE OF zfi_t_payment. " Internal Table
+		data : wa_payment type zfi_t_payment.  " Work Area
+		data : it_payment2 like TABLE OF zfi_t_payment WITH HEADER LINE.
+		 
+		SELECY * FROM zfi_t_payment
+			INTO TABLE it_payment
+		SELECT * FROM zfi_t_payment
+			INTO TABLE it_payment2
+		
+		LOOP AT it_payment INTO wa_payment.
+			WRITE : / wa_payment-belnr, wa_payment-dmbtr,
+						wa_payment-waers.
+		ENDLOOP
+	}
 }
