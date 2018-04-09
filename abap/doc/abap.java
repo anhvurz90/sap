@@ -116,7 +116,7 @@ Section 3: Handling Data: {
 		data : wa_payment type zfi_t_payment.  " Work Area
 		data : it_payment2 like TABLE OF zfi_t_payment WITH HEADER LINE.
 		 
-		SELECY * FROM zfi_t_payment
+		SELECT * FROM zfi_t_payment
 			INTO TABLE it_payment
 		SELECT * FROM zfi_t_payment
 			INTO TABLE it_payment2
@@ -125,5 +125,13 @@ Section 3: Handling Data: {
 			WRITE : / wa_payment-belnr, wa_payment-dmbtr,
 						wa_payment-waers.
 		ENDLOOP
+	}
+	3.4.Internal Tables - Append & Collect: {
+		wa_payment-belnr = "6534".
+		wa_payment-dmbtr = 120.
+		wa_payment-waers = 'USD'.
+		
+		APPEND wa_payment TO it_payment.
+		COLLECT wa_payment INTO it_payment.
 	}
 }
