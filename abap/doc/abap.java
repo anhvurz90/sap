@@ -8,6 +8,10 @@ Section 1: Starting as Abap Developer {
 	Se91: Message Maintenance
 	Se93: Transactions
 	Se10: Transport Organizer
+	Se21: Package Builder
+	
+	Sm30: Maintain Table Views: Initial Screen
+	/Nse38:  
 }
 02.Code editor: {
 	Editor: Alt+Shift+F1
@@ -70,7 +74,10 @@ Section 2: Abap Dictionary {
 							independent of any database.
 			+ View - Create view definitions in ABAP Dictionary. A view is a 
 							virtual table that does not store the data physically.
-			+ Data type - Creates a definition of a user-defined type in ABAP Dic.
+			+ Data type - Creates a definition of a user-defined type in ABAP Dic:
+							+ Data Element
+							+ Structure
+							+ Table type
 			+ Type group - Create groups of data types in ABAP Dic.
 			+ Domain - Create domains in ABAP Dic. A domain is used to describe 
 						the technical attributes of a field, such as a range of values.
@@ -78,5 +85,18 @@ Section 2: Abap Dictionary {
 			+ Lock object - Creates a local or lock object that helps synchronize 
 						the access of multiple users simultaneously.
 		}
+	}
+}
+Section 3: Handling Data: {
+	3.1.Using Select-Endselect {
+		REPORT ZABAP101_HELLO_WORLD.
+		tables : ZFI_T_PAYMENT.
+		START-OF-SELECTION.
+		
+		select * FROM ZFI_T_PAYMENT.
+			write : / ZFI_T_PAYMENT-belnr, ZFI_T_PAYMENT-dmbtr,
+					ZFI_T_PAYMENT-waers.
+		endSelect.
+		
 	}
 }
