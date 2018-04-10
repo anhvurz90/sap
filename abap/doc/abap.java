@@ -156,4 +156,11 @@ Section 3: Handling Data: {
 			DELETE it_payment INDEX 2.
 		}
 	}
+	3.6.Using 'Read Table' statement: { "Read 1 row into work area
+		DATA : lv_belnr LIKE zfi_t_payment-belnr.
+		lv_belnr = '0000000124'.
+		
+		- READ TABLE it_payment INTO wa_payment INDEX 2.
+		- READ TABLE it_payment INTO wa_payment WITH KEY belnr=lv_belnr.
+	}
 }
