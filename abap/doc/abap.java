@@ -164,3 +164,21 @@ Section 3: Handling Data: {
 		- READ TABLE it_payment INTO wa_payment WITH KEY belnr=lv_belnr.
 	}
 }
+Section 4: Selection Screens: {
+	4.0.Definition: {
+		- A Selection Screen is one of the four types of user dialogs:
+		- The selection screens are designed whenever a user wants to
+			design a screen meant only for accepting data input
+		- Both Single value input or Complex value input can be provided 
+			using Selection screen. 
+		- The single value entered in a field is used primarily 
+			to control the flow of a program.
+		- The complex criteria, on the other hand, are used 
+			to restrict the amount of data read from the SAP database.(filter)
+		- The selection screen can be defined with ABAP statements.
+		- For designing the Selection Screen, we have the following Statements:
+			+ Parameters
+			+ Select - Options
+			+ Selection-Screen Command.
+	}
+}
