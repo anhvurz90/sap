@@ -134,4 +134,26 @@ Section 3: Handling Data: {
 		APPEND wa_payment TO it_payment.
 		COLLECT wa_payment INTO it_payment.
 	}
+	3.5.Internal Tables - Modify, Insert & Delete: {
+		- Modify: {
+			LOOP AT it_payment INTO wa_payment.
+				wa_payment-dmbtr = 150.
+				wa_payment-belnr = '75654'.
+				MODIFY it_payment FROM wa_payment INDEX sy-tabix
+						TRANSPORTING dmbtr. 
+				"belnr changes in WA only, but
+				"dmbtr changes in both WA and IT
+			ENDLOOP.
+		}
+		- Insert: {
+			wa_payment-belnr = '6534'.
+			wa_payment-dmbtr = 120.
+			wa_payment-waers = 'USD'.
+			
+			INSERT wa_payment INTO it_payment INDEX 2.
+		}
+		- Delete: {
+			DELETE it_payment INDEX 2.
+		}
+	}
 }
