@@ -192,4 +192,21 @@ Section 4: Selection Screens: {
 							r2 RADIOBUTTON GROUP rg
 		SELECTION-SCREEN end of block 1.
 	}
+	4.2.Additions to your Selection Screen: {
+		- sy-datum NO-EXTENSION:
+			+ SELECT-OPTIONS s_datum for zfi_t_payment-datum DEFAULT sy-datum
+				NO-EXTENSION.
+		- sy-datum NO INTERVALS:
+			+SELECT-OPTIONS s_datum for zfi_t_payment-datum DEFAULT sy-datum
+				NO INTERVALS.
+		- param OBLIGATORY:
+			PARAMETERS : p_belnr type zfi_t_payment-belnr OBLIGATORY.
+		- param MEMORY ID:
+			PARAMETERS : p_wrk type t001w-werks MEMORY ID wrk.
+		- comment:
+			SELECTION-SCREEN : begin of line.
+				SELECTION-SCREEN  COMMENT (11) text-002 FOR FIELD p_belnr.
+				PARAMETERS : p_belnr TYPE zfi_t_payment-belnr.
+			SELECTION-SCREEN : end of line.
+	}
 }
