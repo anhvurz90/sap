@@ -181,4 +181,15 @@ Section 4: Selection Screens: {
 			+ Select - Options
 			+ Selection-Screen Command.
 	}
+	4.1.Create your first SelectionScreen: {
+		TABLES : zfi_t_payment.
+
+		SELECTION-SCREEN begin of block 1 WITH FRAME TITLE text-001.
+			PARAMETERS : p_belnr TYPE zfi_t_payment-belnr.
+			SELECT-OPTIONS s_datum for zfi_t_payment-datum DEFAULT sy-datum.
+			PARAMETERS : p_chk AS CHECKBOX.
+			PARAMETERS : 	r1 RADIOBUTTON GROUP rg DEFAULT 'x',
+							r2 RADIOBUTTON GROUP rg
+		SELECTION-SCREEN end of block 1.
+	}
 }
