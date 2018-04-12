@@ -209,4 +209,33 @@ Section 4: Selection Screens: {
 				PARAMETERS : p_belnr TYPE zfi_t_payment-belnr.
 			SELECTION-SCREEN : end of line.
 	}
+	4.3.Selection Screen Events: {
+		- parameters : p_wrk type t001w-werks memory id wrk MODIF ID 123		
+		   parameters : r1 radiobutton group rg default 'x' USER-COMMAND,
+					    r2 radiobutton group rg.
+		
+		- pbo: Process Before Output
+			AT SELECTION-SCREEN output.
+				BREAK-POINT.
+				LOOP AT screen.
+					IF rx = 'X'.
+					IF screen-group1 = '123'.
+						screen-active = 0.
+					ENDIF.
+					MODIFY SCREEN.
+					ENDIF.
+				ENDLOOP.
+
+		- pai: Process After Input
+			AT SELECTION-SCREEN
+				BREAK-POINT.
+		
+		- INITIALIZATION.
+		- BREAK-POINT.
+		
+		- AT SELECTION-SCREEN on VALUE-REQUEST FOR  s_datum-low.
+			break-point.
+		- AT SELECTION-SCREEN on RADIOBUTTON GROUP rg.
+			break-point.
+	}
 }
